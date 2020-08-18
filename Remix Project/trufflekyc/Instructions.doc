@@ -1,0 +1,20 @@
+Steps to check the KYC_Customer.sol file on Remix online IDE:
+
+1. Go to the website: https://remix.ethereum.org/
+2. TO the left of the webpage, click on the small + sign that says "create new file" and name it KYC_Customer.sol
+3. Copy the contents from the provided KYC_Customer.sol file and paste it on this new document created online
+4. In the plugin manager to the left, make sure the 'solidity compiler' and 'deploy and run transactions' are added to your remix
+5. Click on the solidity compiler from the left tab menu and select the following:
+	Compiler: anything more than 0.5.9
+	Language: Solidity
+	EVM Version: Compiler Default
+6. Click on the 'compile' tab after selecting the details above options 
+7. Now go to the 'deoply and run transactions' by selecting this option from the left menu tab and select the options as below:
+	Environment: JavaScript VM
+	Account: (select any one of the given 5 accounts)
+	Gas Limit: (just to be safe, add a higher amount of 3000000)
+	Value: (we are not doing a value transaction, hence 0)
+8. select the KYC_Compiler.sol file from the tab below 'value' and click deploy
+9. You should be able to see all the functions provided in the .sol file in the left menu
+
+You have successfully compiled and deployed the smart contract on the remix online JavaScript VM environment! 

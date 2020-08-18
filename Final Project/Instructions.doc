@@ -1,0 +1,34 @@
+This is the instruction on how to start the ethereum private network and then deploying the smart contract on the network.
+Copy both the folders inside phase-3 on to your desktop before starting.
+
+1. Open the terminal and redirect to the KYC-Blockchain folder: cd /{path}/KYC-Blockchain
+
+2. you need to issue the following command and press enter: geth --datadir ./datadir init ./genesis.json
+This command will create a private chain data for our blockchain.
+
+3. You need to type the following command and press enter: geth --datadir ./datadir --networkid 2019 --rpc --rpcport 30303 --allow-insecure-unlock console
+This command is going to create a new blockchain network and it will start a console
+
+4. Create new accounts by entering this: personal.newAccount(‘aakash’)
+aakash is the password
+
+5. Unlock the newly created account by entering: personal.unlockAccount(eth.coinbase, ‘aakash’, 0)
+Here eth.coinbase is taken as the first account created by default and the password is 'aakash'. A 0 in the end means we need to keep it unlock for indefinate time.
+
+6. Now the network is running and the coinbase account is unlocked for migrating the smart contracts. Now start the mining process in this terminal by entering:  miner.start()
+IMPORTANT: Let the mining process be on for a while, so that the coinbase account has some ether to execute the migration via truffle
+
+7. Open another terminal (lets call this terminal B) and redirect to the trufflekyc folder in phase-3: cd /{path}/trufflekyc
+
+8. To compile the smart contract code in terminal B press: truffle compile
+With this command, you will see that truffle is going to compile all the smart contracts available inside your contracts directory and is going to create the byte-code that needs to be put on top of the blockchain.
+
+9. Copy the KYC_Customer.sol file inside the newly created contracts folder. Also copy the 2_KYC_Customer_deployment.js file inside the newly created migrations folder. Both these files are inside the trufflekyc folder in phase-3.
+
+9.  Run the following command in Terminal B: truffle migrate --network geth
+it is going to migrate the smart contracts on to the geth network
+
+10. To access the truffle console run the following command: truffle console --network geth
+you will be taken inside the truffle console connected to the geth environment. Inside this console, you can write the JavaScript statements 
+
+
